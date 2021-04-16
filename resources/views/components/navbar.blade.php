@@ -20,6 +20,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('article.create')}}">Inserisci Articolo</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('review.create')}}">Inserisci Recensione</a>
+        </li>
         <li>
           <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ciao, {{Auth::user()->name}}

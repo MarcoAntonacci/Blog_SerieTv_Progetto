@@ -53,7 +53,7 @@
                     <div class="card-body">
                       <h5 class="card-title fs-3 fw-bold ">{{$article->title}}</h5>
                       <p class="card-text">{{$article->description}}</p>
-                      <a href="{{route('dettaglio' , $article)}}" class="btn btn-primary">Scopri di più</a>
+                      <a href="{{route('dettaglio' , compact('article'))}}" class="btn btn-primary">Scopri di più</a>
                     </div>
                   </div>
             </div>

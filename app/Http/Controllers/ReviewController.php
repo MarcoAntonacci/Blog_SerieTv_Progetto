@@ -2,22 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\Review;
 use Illuminate\Http\Request;
-use App\Http\Requests\ArticleRequest;
 
-class ArticleController extends Controller
+class ReviewController extends Controller
 {
 
     public function __construct() 
     {
         $this->middleware('auth');
-    }
-    public function home() {
-      
-        $articles=Article::all();
-
-        return view('welcome', compact('articles'));
     }
     /**
      * Display a listing of the resource.
@@ -26,7 +19,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $reviews=Review::all();
+        return view('review.index', compact('reviews'));
     }
 
     /**
@@ -36,7 +30,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.form');
+        return view('review.create');
     }
 
     /**
@@ -45,37 +39,35 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ArticleRequest $req)
+    public function store(Request $request)
     {
-     
-        $article=Article::create([                              
-            'title'=>$req->input('title'),
-            'description'=>$req->input('description'),
-            'img'=>$req->file('img')->store('public/img'),
+        $review= Review::create([
+            'title'=>$request->input('title'),
+            'description'=>$request->input('description'),
+            'img'=>$request->file('img')->store('public/img'),
         ]);
 
-        return redirect(route('homepage'));
-    
+        return redirect(route('review.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Article  $article
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show(Review $review)
     {
-      return view('dettaglio', compact('article'));
+        return view('review.show',compact('review'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Article  $article
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit(Review $review)
     {
         //
     }
@@ -84,10 +76,10 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Article  $article
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, Review $review)
     {
         //
     }
@@ -95,10 +87,10 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Article  $article
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy(Review $review)
     {
         //
     }
