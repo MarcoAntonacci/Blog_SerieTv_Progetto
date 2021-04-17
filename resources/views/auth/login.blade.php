@@ -18,7 +18,7 @@
                       <label for="exampleInputPassword1" class="mt-2">Password</label>
                       <input type="password"  name="password" class="form-control mt-3" id="exampleInputPassword1" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                    <button type="submit" class="btn btn-color rounded-pill mt-4">Submit</button>
                   </form> 
             </div>
         </div>

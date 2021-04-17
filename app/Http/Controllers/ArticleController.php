@@ -49,7 +49,7 @@ class ArticleController extends Controller
             'img'=>$req->file('img')->store('public/img'),
         ]);
 
-        return redirect(route('homepage'));
+        return redirect(route('home'));
     
     }
 

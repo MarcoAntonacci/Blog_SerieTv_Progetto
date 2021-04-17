@@ -7,7 +7,7 @@
 <section class="container mt-5">
     <div class="row">
         <div class="col-12 ">
-            <h2 class="fs-3 fw-bold">CREA IL TUO ARTICOLO</h2>
+            <h2 class="fs-2 fw-bold">CREA IL TUO ARTICOLO</h2>
         </div>
     </div>
 </section>

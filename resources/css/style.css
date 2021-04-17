@@ -34,8 +34,8 @@ h1,h2,h3 {
 
 .a-color:hover{
   color:#E50914;
-  border-bottom: 2px solid #E50914;
-  transition: ease-in-out 0.5s;
+  border-bottom: 1px solid #E50914;
+  transition: ease-in-out 0.3s;
 }
 .masthead {
   height: 100vh;
@@ -56,4 +56,17 @@ h1,h2,h3 {
   color: #FFFFFF;
   background-color: #e50914d3;
   border-color:#E50914 ;
+}
+
+.card-body:hover{
+  background-color:#18181838;
+  transition: ease-in-out 0.5s;
+}
+
+.bg-footer {
+  background-color:#000000;
+}
+
+.dropdown-item:hover{
+  background-color:#181818 ;
 }

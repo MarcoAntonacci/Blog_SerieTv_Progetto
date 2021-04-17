@@ -16,7 +16,7 @@
           <a class="nav-link active a-color fs-5" href="{{route('login')}}">Login<span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link active fs-5" href="{{route('register')}}">Register<span class="sr-only"></span></a>
+          <a class="nav-link active a-color fs-5" href="{{route('register')}}">Register<span class="sr-only"></span></a>
         </li>
          @else
         <li class="nav-item">
@@ -30,7 +30,7 @@
             Ciao, {{Auth::user()->name}}
           </a>
           <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-            <li><a href="{{route('logout')}}" class="dropdown-item a-color fs-5" onclick="event.preventDefault();document.getElementById('form-logout').submit();">Logout</a></li>
+            <li><a href="{{route('logout')}}" class="dropdown-item text-color-2 fs-5" onclick="event.preventDefault();document.getElementById('form-logout').submit();">Logout</a></li>
           <form method="POST" action="{{route('logout')}}"  id="form-logout">
           @csrf
           </form>
