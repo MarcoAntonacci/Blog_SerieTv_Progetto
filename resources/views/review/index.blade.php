@@ -12,7 +12,7 @@
                   <div class="card-body">
                     <h5 class="card-title fs-3 fw-bold ">{{$review->title}}</h5>
                     <p class="card-text">{{$review->description}}</p>
-                    <a href="{{route('review.show' , compact('review'))}}" class="btn btn-primary">Scopri di più</a>
+                    <a href="{{route('review.show' , compact('review'))}}" class="btn btn-color rounded-pill">Scopri di più</a>
                   </div>
                 </div>
           </div>

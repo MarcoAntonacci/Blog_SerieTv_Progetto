@@ -10,7 +10,7 @@
                   <div class="card-body">
                     <h5 class="card-title fs-3 fw-bold ">{{$article->title}}</h5>
                     <p class="card-text">{{$article->description}}</p>
-                    <a href="{{route('home')}}" class="btn btn-primary">Torna alla home</a>
+                    <a href="{{route('home')}}" class="btn btn-color rounded-pill">Torna alla home</a>
                   </div>
                 </div>
           </div>

@@ -7,6 +7,15 @@
             </div>
         </div>
         <div class="row">
+          @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
             <div class="col-12 col-md-4 offset-4">
                 <form method="POST" action="{{route('register')}}">
                     @csrf
@@ -26,7 +35,7 @@
                         <label for="password_confirmation" class="mt-2">Password Confirmation</label>
                         <input type="password"  name="password_confirmation" class="form-control mt-3" id="password_confirmation" placeholder="Password">
                       </div>
-                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                    <button type="submit" class="btn btn-color rounded-pill mt-4">Submit</button>
                   </form> 
             </div>
         </div>

@@ -1,35 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <a class="navbar-brand" href="{{route('home')}}">Serie Tv Addicted</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-color sticky-top">
+    <a class="navbar-brand text-color-2 mx-3 fs-2" href="{{route('home')}}">Netflics</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon ">
+        <i class="fas fa-bars text-color-2"></i>
+      </span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
           @guest
         <li class="nav-item active">
-          <a class="nav-link active" href="{{route('home')}}">Home<span class="sr-only"></span></a>
+          <a class="nav-link active a-color fs-5" href="{{route('home')}}">Home<span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link active" href="{{route('login')}}">Login<span class="sr-only"></span></a>
+          <a class="nav-link active a-color fs-5" href="{{route('login')}}">Login<span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link active" href="{{route('register')}}">Register<span class="sr-only"></span></a>
+          <a class="nav-link active fs-5" href="{{route('register')}}">Register<span class="sr-only"></span></a>
         </li>
          @else
         <li class="nav-item">
-          <a class="nav-link" href="{{route('article.create')}}">Inserisci Articolo</a>
+          <a class="nav-link a-color fs-5 mx-2" href="{{route('article.create')}}">Inserisci Articolo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('review.create')}}">Inserisci Recensione</a>
+          <a class="nav-link a-color fs-5 mx-2" href="{{route('review.create')}}">Inserisci Recensione</a>
         </li>
         <li>
-          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#" class="nav-link dropdown-toggle a-color fs-5 mx-2" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ciao, {{Auth::user()->name}}
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a href="{{route('logout')}}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('form-logout').submit();">Logout</a></li>
-          <form method="POST" action="{{route('logout')}}" style="display:none" id="form-logout">
+          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+            <li><a href="{{route('logout')}}" class="dropdown-item a-color fs-5" onclick="event.preventDefault();document.getElementById('form-logout').submit();">Logout</a></li>
+          <form method="POST" action="{{route('logout')}}"  id="form-logout">
           @csrf
           </form>
           </ul>

@@ -13,12 +13,7 @@ class ArticleController extends Controller
     {
         $this->middleware('auth');
     }
-    public function home() {
-      
-        $articles=Article::all();
 
-        return view('welcome', compact('articles'));
-    }
     /**
      * Display a listing of the resource.
      *

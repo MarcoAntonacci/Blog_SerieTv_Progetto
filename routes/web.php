@@ -15,7 +15,7 @@ use App\Http\Controllers\ReviewController;
 |
 */
 
-Route::get('/',[ArticleController::class, 'home'])->name('home');
+Route::get('/',[PublicController::class, 'home'])->name('home');
 Route::get('/dettaglio/{article}', [ArticleController::class,'show'])->name('dettaglio');
 Route::get('/article/create',[ArticleController::class, 'create'])->name('article.create');
 Route::post('/article/store',[ArticleController::class, 'store'])->name('article.store');
