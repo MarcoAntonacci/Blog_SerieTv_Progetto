@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
@@ -47,6 +48,7 @@ class ArticleController extends Controller
             'title'=>$req->input('title'),
             'description'=>$req->input('description'),
             'img'=>$req->file('img')->store('public/img'),
+            'user_id'=>Auth::id(),
         ]);
 
         return redirect(route('home'));

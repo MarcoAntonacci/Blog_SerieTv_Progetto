@@ -10,6 +10,7 @@
                   <div class="card-body">
                     <h5 class="card-title fs-3 fw-bold ">{{$article->title}}</h5>
                     <p class="card-text">{{$article->description}}</p>
+                    <p class="card-text">{{$article->user->name}}</p>
                     <a href="{{route('home')}}" class="btn btn-color rounded-pill">Torna alla home</a>
                   </div>
                 </div>

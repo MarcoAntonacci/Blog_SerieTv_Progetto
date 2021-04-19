@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReviewRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -46,6 +48,7 @@ class ReviewController extends Controller
             'title'=>$request->input('title'),
             'description'=>$request->input('description'),
             'img'=>$request->file('img')->store('public/img'),
+            'user_id'=>Auth::id(),
         ]);
 
         return redirect(route('review.index'));
@@ -70,7 +73,7 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        //
+        return view('review.edit', compact('review'));
     }
 
     /**
@@ -82,7 +85,15 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        $review->title = $request->title;
+        $review->description = $request->description;
+
+        if($request->img){
+            $review->img = $request->file('img')->store('public/img');
+        }
+        $review->save();
+
+        return redirect(route('review.index'));
     }
 
     /**
@@ -93,6 +104,14 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+        $review->delete();
+
+        return redirect (route('review.index'));
+    }
+
+    public function auth($auth){
+        $reviews = Review::where('user_id', $auth)->get();
+        $user = User::find($auth);
+        return view('review.auth', compact('reviews', 'user'));
     }
 }
